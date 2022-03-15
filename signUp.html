@@ -2,37 +2,49 @@
 <html>
 
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="signup.css">
 </head>
 
 <body>
-    <div class="header">
+    <div class="title">
         <h1>Sign Up</h1>
     </div>
     <form class="container-table">
-        <div class="column">
-            <input type="text" placeholder="1000" name="fname" />
-            <input type="text" placeholder="1000" name="lname">
-        </div>
-        <input type="text" placeholder="1000" name="fname" />
-        <input type="text" placeholder="1000" name="lname">
-        <div>
-            <input type="text" placeholder="1000" name="fname" />
-            <input type="text" placeholder="1000" name="lname">
-        </div>
-        <div>
-            <input type="text" placeholder="1000" name="fname" />
+        <div class="container-upper">
+            <div class="column-one">
+                <input class="fname" type="text" placeholder="First Name" name="fname" />
+                <input type="text" placeholder="Last Name" name="lname">
+            </div>
+
             <div>
-                <p>By clicking</p>
-                <button>Register</button>
-                <p>you agree to the Terms and Conditions</p>
-                set out by this site, including our Cookie Use
+                <input type="number" placeholder="Mobile No." name="mobile" />
+                <input type="email" placeholder="Email Address" name="email">
+            </div>
+            <div class="password">
+                <input class="password-left" type="password" placeholder="Password" name="password" />
+                <input type="password" placeholder="Confirm Password" name="confirmPassword" />
+            </div>
+        </div>
+        <div class="container-lower">
+            <div class="agree">
+                <input type="checkbox" id="agree" name="agree" value="agree" />
+                <label class="agree-label" for="agree"> <strong>I Agree</strong> </label>
+            </div>
+            <div class="agree-text">
+                <p>By clicking
+                    <span class="agree-box">Register</span>,
+                    you agree to the Terms and Conditions
+                    set out by this site, including our Cookie Use.
+                </p>
             </div>
 
         </div>
-        <div>
-            <button>Register</button>
-            <button>Sign In</button>
+        <div class="register-buttons">
+            <button class="button-left">Register</button>
+            <button class="button-signIn">Sign In</button>
         </div>
 
     </form>
