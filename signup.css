@@ -41,9 +41,6 @@ body {
 
 .container-lower {
   display: flex;
-  justify-content: space-between;
-  justify-items: center;
-  align-items: center;
   margin-top: 10px;
 }
 .agree {
@@ -73,11 +70,6 @@ body {
 }
 .register-buttons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  text-align: center;
 }
 .register-buttons button {
   width: 100%;
