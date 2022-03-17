@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  max-width: 480px;
 }
 
 .title {
@@ -17,6 +18,7 @@ body {
 
 .container-table {
   padding: 0 40px;
+  min-height: 100vh;
 }
 
 .column-one {
