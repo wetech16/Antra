@@ -1,0 +1,9 @@
+.footer__container {
+  height: 9rem;
+  background-color: var(--nav-color);
+  text-align: center;
+}
+
+.footer__content {
+  padding: var(--fs-lg) 0 var(--fs-600) 0;
+}

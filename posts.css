@@ -1,9 +1,0 @@
-.blog_section {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 4fr;
-}
-
-.blog_section_article {
-  border: 1px solid gray;
-}
