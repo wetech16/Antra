@@ -2,7 +2,8 @@
   font-size: 1.2rem;
   color: gray;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 1.2rem;
 }
 
 .blog_header_title {
