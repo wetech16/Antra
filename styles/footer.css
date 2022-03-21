@@ -1,5 +1,5 @@
 .footer__container {
-  height: 9rem;
+  padding: 1rem;
   background-color: var(--nav-color);
   text-align: center;
 }

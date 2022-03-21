@@ -5,9 +5,13 @@
 }
 
 .post__card {
-  border: 4px solid var(--nav-color);
+  border: var(--fs-200) solid var(--nav-color);
   border-top-width: 2px;
   padding: 1.5rem;
+}
+
+.posts .active {
+  border: 1px solid var(--nav-color);
 }
 
 @media screen and (min-width: 35rem) {
@@ -34,7 +38,7 @@
 
 .post__date {
   font-size: var(--fst-800);
-  color: var(--nav-color);
+  color: var(--nav-link-color);
 }
 
 .post__content {

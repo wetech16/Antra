@@ -2,12 +2,14 @@
   --fw-400: 500;
   --fw-700: 600;
 
+  --fs-200: 0.4rem;
   --fs-300: 0.6875rem;
   --fs-400: 0.8125rem;
   --fs-500: 1.25rem;
   --fs-600: 1.5rem;
   --fs-700: 1.75rem;
   --fs-800: 2rem;
+  --fs-m: 2.5rem;
   --fs-lg: 3rem;
 
   --body-fs: var(--fs-lg);
@@ -19,9 +21,12 @@
 
   --white: #ffffff;
   --black: #000000;
-  --nav-color: #c2f0f0;
+  --nav-color: #85e0e0;
+  --nav-link-color: #248f8f;
   --post-header-left: blue;
   --post-header-right: orange;
+  --content-author-lightblue: blue;
+  --btn-active: blue;
 
   --mobile: 320px;
   --mobile-l: 640px;

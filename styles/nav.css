@@ -8,14 +8,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav__link {
-  color: var(--nav-color);
+  color: var(--nav-link-color);
 }
 
 .nav__link__title {
   color: var(--black);
-  font-size: var(--fs-800);
+  font-size: var(--fs-m);
   font-weight: var(--fw-700);
 }
