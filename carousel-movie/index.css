@@ -33,6 +33,10 @@
   position: absolute;
   top: 50%;
   left: 0%;
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
 }
 
 .card__btn-right {
