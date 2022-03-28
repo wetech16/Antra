@@ -1,0 +1,41 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.album__container {
+  width: 500px;
+}
+
+.fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.alubm__search__header {
+  padding: 20px;
+  background-color: grey;
+}
+
+.input-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input-bar__input {
+  padding: 500px;
+  flex-grow: 1;
+}
+
+.input-bar__submit {
+  border: none;
+  outline: 0;
+  padding: 5px 15px;
+}
