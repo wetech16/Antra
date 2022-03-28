@@ -54,6 +54,10 @@ button{
     height: 400px;
     overflow: scroll;
 }
+
+.todolist__content .todolist__content__row.checked {
+    text-decoration: line-through;
+}
 .todolist__content__row{
     height: 50px;
     display: flex;
