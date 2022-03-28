@@ -6,25 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itunes Search API</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <section class="album__container fixed-center">
+    <section class="album__container">
 
         <div class="album__search__header">
             <div class="input-bar">
-                <input class="input-bar__input" />
-                <button class="input-bar__submit">$</button>
-            </div>
+                <input type="text" placeholder="Search..." name="search" class="input-bar__input">
+                <button class="input-bar__submit"><i class="fa fa-search"></i></button>
 
+            </div>
+            <span id="error"></span>
+            <h1 class="album__search__title">
+            </h1>
         </div>
+
         <div class="album__card__container ">
 
         </div>
 
 
     </section>
-    <script src="index.js" />
+    <script src="search.js" />
 </body>
 
 </html>

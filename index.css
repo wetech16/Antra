@@ -8,7 +8,125 @@
 }
 
 .album__container {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album__search__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-bar {
+  width: 100%;
+  padding: 10px;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: center;
+}
+
+.input-bar__input {
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 60%;
+  background: #f1f1f1;
+}
+
+.input-bar__submit {
+  float: left;
+  width: 10%;
+  padding: 5px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+#error {
+  display: block;
+  color: red;
+  margin: 5px 0 0 0;
+}
+
+.album__search__title {
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.album__card__container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  gap: 10px 20px;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 400px) {
+  .album__card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .album__card__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 700px) {
+  .album__card__container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.album__card {
+  margin: auto;
+}
+
+.album__card img {
+  width: 100px;
+  height: 100px;
+}
+
+.album__card h2 {
+  width: 100px;
+  font-size: 10px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .fixed-center {
@@ -16,26 +134,4 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.alubm__search__header {
-  padding: 20px;
-  background-color: grey;
-}
-
-.input-bar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.input-bar__input {
-  padding: 500px;
-  flex-grow: 1;
-}
-
-.input-bar__submit {
-  border: none;
-  outline: 0;
-  padding: 5px 15px;
 }
