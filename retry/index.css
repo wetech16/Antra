@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.sign__up__container {
+  margin: auto;
+  width: clamp(250px, 80vw, 500px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign__up__title {
+  font-size: 30px;
+}
+
+.sign__up__form {
+  width: 100%;
+}
+.row__position {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row__username input {
+  width: 100%;
+  height: 40px;
+  margin: 8px 8px;
+}
+
+.row__password input {
+  width: 100%;
+  height: 40px;
+  margin: 8px 8px;
+}
+.row__buttons button {
+  width: 100%;
+  height: 40px;
+  margin: 8px 8px;
+}
