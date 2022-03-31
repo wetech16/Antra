@@ -137,3 +137,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.album__loadMoreBtn {
+  display: none;
+  width: 80%;
+  margin: auto;
+  padding: 5px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}

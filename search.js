@@ -14,6 +14,8 @@ const View = (function () {
     albumInputSubmit: ".input-bar__submit",
     error: "#error",
     albumSearchTitle: ".album__search__title",
+    albumContainer: ".album__container",
+    albumLoadMoreBtn: ".album__loadMoreBtn",
   };
   function generatePreload() {
     return `<div class="loader fixed-center"></div>`;
@@ -59,11 +61,17 @@ const View = (function () {
   function render(element, template) {
     element.innerHTML = template;
   }
+  function renderLoadMoreBtn() {
+    const ele = document.querySelector(domSelectors.albumLoadMoreBtn);
+    ele.style.display = "block";
+  }
+
   return {
     renderAlbumsCards,
     renderAlumTitle,
     renderPreload,
     domSelectors,
+    renderLoadMoreBtn,
   };
 })();
 
@@ -72,17 +80,33 @@ const Model = (function (AlbumsAPI) {
 })(AlbumsAPI);
 
 const Controller = (function (view, model) {
-  let num = 5;
   class State {
     constructor() {
       this._albums = [];
+      this._loadNum = [0, 5];
     }
     get albums() {
       return this._albums;
     }
+    get loadNum() {
+      return this._loadNum;
+    }
     set albums(newAlbums) {
       this._albums = newAlbums;
-      view.renderAlbumsCards(this._albums);
+      let temp = this._albums.slice(
+        this._loadNum[0],
+        this._loadNum[1]
+      );
+      view.renderAlbumsCards(temp);
+    }
+    set loadNum(newNum) {
+      this._loadNum = newNum;
+      let temp = this._albums.slice(
+        this._loadNum[0],
+        this._loadNum[1]
+      );
+
+      view.renderAlbumsCards(temp);
     }
   }
   let state = new State();
@@ -116,17 +140,31 @@ const Controller = (function (view, model) {
             .click();
         }
       });
+    document
+      .querySelector(view.domSelectors.albumLoadMoreBtn)
+      .addEventListener("click", (e) => {
+        state.loadNum = [state.loadNum[0], state.loadNum[1] + 5];
+      });
   }
   function getAlbum(album) {
     preLoad();
     model.AlbumsAPI.getAlbums(album).then((albumData) => {
-      state.albums = albumData.results;
-      console.log(albumData);
+      let resultData = albumData.results;
+      state.albums = resultData;
       //todo result count just 5
       view.renderAlumTitle(albumData.resultCount, album);
+      view.renderLoadMoreBtn();
     });
   }
   function preLoad() {
+    //loadMoreBtn cleanup
+    const loadMoreBtn = document.querySelector(
+      view.domSelectors.albumLoadMoreBtn
+    );
+    loadMoreBtn.style.display = "none";
+    //load Num clean up
+    state.loadNum = [0, 5];
+    //
     view.renderAlumTitle("preLoad", "Searching");
     view.renderPreload();
   }
