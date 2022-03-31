@@ -19,6 +19,7 @@ const View = (function () {
     return `<div class="loader fixed-center"></div>`;
   }
   function generateAlbumSearchTitle(resultCount, searchValue) {
+    if (resultCount === "preLoad") return "Searching...";
     return `${resultCount} results for "${searchValue}"`;
   }
   function generateAlbumCardContent({
@@ -71,6 +72,7 @@ const Model = (function (AlbumsAPI) {
 })(AlbumsAPI);
 
 const Controller = (function (view, model) {
+  let num = 5;
   class State {
     constructor() {
       this._albums = [];
@@ -80,7 +82,7 @@ const Controller = (function (view, model) {
     }
     set albums(newAlbums) {
       this._albums = newAlbums;
-      view.renderAlbumsCards(this._albums.results);
+      view.renderAlbumsCards(this._albums);
     }
   }
   let state = new State();
@@ -118,13 +120,14 @@ const Controller = (function (view, model) {
   function getAlbum(album) {
     preLoad();
     model.AlbumsAPI.getAlbums(album).then((albumData) => {
-      state.albums = albumData;
+      state.albums = albumData.results;
       console.log(albumData);
+      //todo result count just 5
       view.renderAlumTitle(albumData.resultCount, album);
     });
   }
   function preLoad() {
-    view.renderAlumTitle(0, "Searching");
+    view.renderAlumTitle("preLoad", "Searching");
     view.renderPreload();
   }
   function init() {
